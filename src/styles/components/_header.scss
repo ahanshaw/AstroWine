@@ -1,0 +1,34 @@
+.header {
+    padding-block: 2rem;
+
+    &-container {
+        @extend %container;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-logo {
+        font-size: 2rem;
+        font-weight: 700;
+
+        a {
+            text-decoration-color: transparent;
+            transition: text-decoration-color .3s ease;
+
+            &:hover {
+                text-decoration-color: inherit;
+            }
+        }
+    }
+
+    &-nav {
+
+        ul {
+            display: flex;
+            gap: 1rem;
+            list-style-type: none;
+            padding: 0;
+        }
+    }
+}

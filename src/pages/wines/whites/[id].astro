@@ -1,0 +1,21 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Wine from '../../../components/Wine.astro';
+
+const { id } = Astro.params;
+const response = await fetch('https://api.sampleapis.com/wines/whites/' + id);
+const data = await response.json();
+const wine: any = data;
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<Wine 
+			wine={wine.wine} 
+			winery={wine.winery} 
+			location={wine.location} 
+			image={wine.image} 
+			rating={wine.rating}
+		/>
+	</main>
+</Layout>

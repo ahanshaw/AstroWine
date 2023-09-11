@@ -1,0 +1,34 @@
+---
+interface Props {
+	winery: string;
+	wine: number;
+	rating: {
+		average: number;
+		reviews: string;
+	}
+	location: string;
+	image: string;
+}
+
+const { winery, wine, rating, location, image } = Astro.props;
+---
+
+<div class="wine">
+    <div class="wine-image">
+        {image && 
+            <img src={image} alt={wine + " bottle."}>
+        }
+    </div>
+    <div class="wine-details">
+        <h2>{wine}</h2>
+        {winery && 
+            <h3>Winery: {winery}</h3>
+        }
+        {location &&
+            <p>Location: {location}</p>
+        }
+        {rating.average &&
+            <p>Average rating: {rating.average}</p>
+        }
+    </div>
+</div>
