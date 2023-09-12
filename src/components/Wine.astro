@@ -16,7 +16,7 @@ const { winery, wine, rating, location, image } = Astro.props;
 <div class="wine">
     <div class="wine-image">
         {image && 
-            <img src={image} alt={wine + " bottle."}>
+            <img src={image} alt={wine + " bottle."} transition:name={wine}>
         }
     </div>
     <div class="wine-details">

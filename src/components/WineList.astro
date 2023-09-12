@@ -12,7 +12,7 @@ const { wine, image, type, id } = Astro.props;
 <a class="winelist-item" href={"/" + type + "/" + id}>
     <div class="winelist-item-image">
         {image && 
-            <img src={image} alt={wine + " bottle."}>
+            <img src={image} alt={wine + " bottle."} transition:name={wine}>
         }
     </div>
     <h2 class="winelist-item-title">{wine}</h2>
