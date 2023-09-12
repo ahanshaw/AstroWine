@@ -1,11 +1,16 @@
 .pagination {
-    position: relative;
-    margin-top: 6rem;
+    padding-block: 6rem 3rem;
+
+    &-inner {
+        @extend %container;
+        position: relative;
+    }
 
     &-prev {
         position: absolute;
         bottom: 0;
         left: 0;
+        font-weight: 700;
     }
 
     &-page {
@@ -13,6 +18,7 @@
         bottom: 0;
         left: 50%;
         font-size: .9rem;
+        font-weight: 700;
         transform: translateX(-50%);
     }
 
@@ -20,6 +26,7 @@
         position: absolute;
         bottom: 0;
         right: 0;
+        font-weight: 700;
         text-align: right;
     }
 }

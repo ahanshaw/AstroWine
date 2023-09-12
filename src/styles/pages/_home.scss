@@ -1,6 +1,11 @@
 .home {
+    
     &-wines {
-        margin-top: 6rem;
+        padding-block: 6rem;
+
+        &-inner {
+            @extend %container; 
+        }
 
         h2 {
             text-align: center;

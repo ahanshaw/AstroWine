@@ -12,12 +12,8 @@ body {
   font-family: "Lato", sans-serif;
   font-size: 1.25rem;
   line-height: 1.5;
-  color: white;
-  background-color: black;
-}
-
-main {
-  @extend %container;
+  color: $white;
+  background-color: $black;
 }
 
 h1 {
@@ -34,7 +30,7 @@ h2 {
 }
 
 a {
-  color: white;
+  color: $white;
 }
 
 small {

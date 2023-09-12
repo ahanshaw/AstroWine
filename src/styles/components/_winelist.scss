@@ -1,8 +1,13 @@
 .winelist {
+    @extend %container;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
     margin-top: 4rem;
+
+    &-inner {
+        padding-top: 4rem;
+    }
 
     &-item {
         text-align: center;

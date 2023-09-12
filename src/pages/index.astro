@@ -6,22 +6,24 @@ import HomeTop from '../components/HomeTop.astro';
 
 <Layout title="Wines!">
 	<main>
-		<h1>Wines!</h1>
-
-		<div class="home-wines">
-			<div class="home-wines-title">
-				<h2>Top Reds</h2>
-				<a href="/reds/page/1">See All Red Wines</a>
+		<div class="home-wines theme-reds">
+			<div class="home-wines-inner">
+				<div class="home-wines-title">
+					<h2>Top Reds</h2>
+					<a href="/reds/page/1">See All Red Wines</a>
+				</div>
+				<HomeTop type="reds" />
 			</div>
-			<HomeTop type="reds" />
 		</div>
 
-		<div class="home-wines">
-			<div class="home-wines-title">
-				<h2>Top Whites</h2>
-				<a href="/whites/page/1">See All White Wines</a>
+		<div class="home-wines theme-whites">
+			<div class="home-wines-inner">
+				<div class="home-wines-title">
+					<h2>Top Whites</h2>
+					<a href="/whites/page/1">See All White Wines</a>
+				</div>
+				<HomeTop type="whites" />
 			</div>
-			<HomeTop type="whites" />
 		</div>
 	</main>
 </Layout>

@@ -20,6 +20,7 @@ const nextPage = pageNumber + 1;
 
 <Layout title={wineTitle}>
 	<main>
+		<div class={"winelist-inner theme-" + type}>
 		<h1>{wineTitle}</h1>
 		<div class="winelist">
 			{wines.slice(sliceStart, sliceEnd).map((wine: WineProps) => (
@@ -32,6 +33,7 @@ const nextPage = pageNumber + 1;
 			))}
 		  </div>
           <div class="pagination">
+			<div class="pagination-inner">
             {page > 1 &&
                 <p class="pagination-prev"><a href={"/reds/page/" + prevPage}>Previous</a></p>
             }
@@ -39,6 +41,8 @@ const nextPage = pageNumber + 1;
             {page < totalPages &&
                 <p class="pagination-next"><a href={"/reds/page/" + nextPage}>Next</a></p>
             }
+			</div>
           </div>
+		</div>
 	</main>
 </Layout>
