@@ -1,0 +1,26 @@
+---
+interface Props {
+    type: string;
+}
+
+const { type } = Astro.props;
+
+import WineList from '../components/WineList.astro';
+import type { WineProps } from '../scripts/interfaces.ts';
+
+const wineType = "reds";
+const response = await fetch('https://api.sampleapis.com/wines/' + type);
+const data = await response.json();
+const wines: any = data;
+const sortedWines: any = wines.sort((a, b) => (a.rating.average < b.rating.average) ? 1 : (a.rating.average > b.rating.average) ? -1 : 0);
+---
+
+<div class="winelist">
+    {sortedWines.slice(0, 6).map((wine: WineProps) => (
+        <WineList 
+            wine={wine.wine}
+            image={wine.image} 
+            type={type}
+            id={wine.id} />
+    ))}
+  </div>

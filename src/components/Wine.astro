@@ -20,9 +20,9 @@ const { winery, wine, rating, location, image } = Astro.props;
         }
     </div>
     <div class="wine-details">
-        <h2>{wine}</h2>
+        <h1>{wine}</h1>
         {winery && 
-            <h3>Winery: {winery}</h3>
+            <p>Winery: {winery}</p>
         }
         {location &&
             <p>Location: {location}</p>

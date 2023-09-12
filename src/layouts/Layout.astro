@@ -24,9 +24,13 @@ import '../styles/main.scss';
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header />
-		<slot />
-		<Footer />
+		<div class="wrapper">
+			<div>
+				<Header />
+				<slot />
+				</div>
+			<Footer />
+		</div>
 	</body>
 </html>
 

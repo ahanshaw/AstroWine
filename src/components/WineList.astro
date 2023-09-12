@@ -1,0 +1,19 @@
+---
+interface Props {
+	wine: number;
+    type: string;
+	image: string;
+    id: number;
+}
+
+const { wine, image, type, id } = Astro.props;
+---
+
+<a class="winelist-item" href={"/" + type + "/" + id}>
+    <div class="winelist-item-image">
+        {image && 
+            <img src={image} alt={wine + " bottle."}>
+        }
+    </div>
+    <h2 class="winelist-item-title">{wine}</h2>
+</a>

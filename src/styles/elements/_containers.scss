@@ -1,5 +1,20 @@
-%container {
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+%container,
+.container {
     width: calc(100% - 4rem);
     max-width: 75rem;
+    margin-inline: auto;
+}
+
+%container-inner,
+.container-inner {
+    width: 100%;
+    max-width: 60rem;
     margin-inline: auto;
 }
