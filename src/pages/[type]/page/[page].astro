@@ -18,7 +18,7 @@ const prevPage = pageNumber - 1;
 const nextPage = pageNumber + 1;
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={wineTitle}>
 	<main>
 		<h1>{wineTitle}</h1>
 		<div class="winelist">
@@ -27,7 +27,8 @@ const nextPage = pageNumber + 1;
 					wine={wine.wine}
 					image={wine.image} 
 					type={type}
-					id={wine.id} />
+					id={wine.id}
+                />
 			))}
 		  </div>
           <div class="pagination">

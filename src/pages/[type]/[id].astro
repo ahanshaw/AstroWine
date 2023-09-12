@@ -8,7 +8,7 @@ const data = await response.json();
 const wine: any = data;
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={wine.wine}>
 	<main>
 		<div class="container-inner">
 			<Wine 
