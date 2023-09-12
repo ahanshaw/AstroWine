@@ -1,0 +1,43 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import WineList from '../../../components/WineList.astro';
+import type { WineProps } from '../../../scripts/interfaces.ts';
+
+const { type, page } = Astro.params;
+const response = await fetch('https://api.sampleapis.com/wines/' + type);
+const data = await response.json();
+const wines: any = data;
+const wineTitle = type.charAt(0).toUpperCase() + type.slice(1);
+const pageNumber = parseInt(page);
+const listLength = wines.length;
+const pageLength = 12;
+const totalPages = Math.ceil(listLength / pageLength);
+const sliceStart = (pageNumber - 1) * pageLength;
+const sliceEnd = pageNumber * pageLength;
+const prevPage = pageNumber - 1;
+const nextPage = pageNumber + 1;
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>{wineTitle}</h1>
+		<div class="winelist">
+			{wines.slice(sliceStart, sliceEnd).map((wine: WineProps) => (
+				<WineList 
+					wine={wine.wine}
+					image={wine.image} 
+					type={type}
+					id={wine.id} />
+			))}
+		  </div>
+          <div class="pagination">
+            {page > 1 &&
+                <p class="pagination-prev"><a href={"/reds/page/" + prevPage}>Previous</a></p>
+            }
+            <p class="pagination-page">Page {page} of {totalPages}</p>
+            {page < totalPages &&
+                <p class="pagination-next"><a href={"/reds/page/" + nextPage}>Next</a></p>
+            }
+          </div>
+	</main>
+</Layout>

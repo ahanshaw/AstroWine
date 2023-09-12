@@ -1,0 +1,25 @@
+.pagination {
+    position: relative;
+    margin-top: 6rem;
+
+    &-prev {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &-page {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        font-size: .9rem;
+        transform: translateX(-50%);
+    }
+
+    &-next {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-align: right;
+    }
+}
